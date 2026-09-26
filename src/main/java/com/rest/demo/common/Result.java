@@ -12,7 +12,6 @@ public class Result<T> {
     private String traceId;  // 用于获取链路追踪 ID
 
     private Result(){
-        System.out.println("构造器执行，MDC 里的 traceId: " + MDC.get("traceId"));
         this.timestamp = System.currentTimeMillis();
         this.traceId = MDC.get("traceId");
     }

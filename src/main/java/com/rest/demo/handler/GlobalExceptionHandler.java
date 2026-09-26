@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+    // 自定义 BusinessException 异常
     @ExceptionHandler(BusinessException.class)
     public Result<?> handlerBusinessException(BusinessException e){
         return Result.error(e.getCode(), e.getMessage());
